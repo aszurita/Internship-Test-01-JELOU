@@ -34,9 +34,9 @@ export const CountryCard = ({ country, onClick }: CountryCardProps) => {
       <img
         src={country.flags.svg}
         alt={country.flags.alt || country.name.common}
-        className="w-full h-44 object-cover"
+        className="w-full h-36 sm:h-44 object-cover"
       />
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
           {country.name.common}
         </h2>

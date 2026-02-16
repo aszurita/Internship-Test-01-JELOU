@@ -87,11 +87,11 @@ export const CountryList = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
       {/* Filters */}
-      <div className="flex flex-col gap-4 mb-10">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-10">
         <SearchFilter search={search} onSearchChange={setSearch} />
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <SortControls
             sortBy={sortBy}
             sortDirection={sortDirection}
@@ -101,7 +101,7 @@ export const CountryList = () => {
           <RegionFilter region={region} onRegionChange={setRegion} />
           <button
             onClick={() => setShowFavorites(!showFavorites)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base transition-colors ${
               showFavorites
                 ? 'bg-yellow-500 text-white shadow-md'
                 : 'bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
@@ -119,7 +119,7 @@ export const CountryList = () => {
           No countries found.
         </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {filteredCountries.map((country) => (
             <CountryCard
               key={country.cca3}

@@ -24,7 +24,7 @@ export const CountryDetail = ({ cca3, fetchFullCountryDetails, onBack }: Country
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex items-center justify-center h-64">
           <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
         </div>
@@ -34,7 +34,7 @@ export const CountryDetail = ({ cca3, fetchFullCountryDetails, onBack }: Country
 
   if (!country) {
     return (
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <button
           onClick={onBack}
           className="flex items-center gap-2 px-6 py-2 bg-white dark:bg-dark-card shadow-md rounded-lg text-gray-900 dark:text-white hover:shadow-lg transition-shadow mb-8"
@@ -48,24 +48,24 @@ export const CountryDetail = ({ cca3, fetchFullCountryDetails, onBack }: Country
   }
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       <button
         onClick={onBack}
-        className="flex items-center gap-2 px-6 py-2 bg-white dark:bg-dark-card shadow-md rounded-lg text-gray-900 dark:text-white hover:shadow-lg transition-shadow mb-10"
+        className="flex items-center gap-2 px-4 sm:px-6 py-2 bg-white dark:bg-dark-card shadow-md rounded-lg text-sm sm:text-base text-gray-900 dark:text-white hover:shadow-lg transition-shadow mb-6 sm:mb-10"
       >
-        <ArrowLeft className="w-5 h-5" />
+        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
         Back
       </button>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center">
         <img
           src={country.flags.svg}
           alt={country.flags.alt || country.name.common}
-          className="w-full rounded-lg shadow-lg"
+          className="w-full max-h-64 sm:max-h-none object-cover rounded-lg shadow-lg"
         />
 
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             {country.name.common}
           </h2>
 
