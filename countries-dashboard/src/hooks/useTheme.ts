@@ -3,7 +3,7 @@ import { useLocalStorage } from './useLocalStorage';
 import { Theme } from './types';
 
 export const useTheme = (): [Theme, () => void] => {
-  const [theme, setTheme] = useLocalStorage<Theme>('theme', 'light');
+  const [theme, setTheme] = useLocalStorage<Theme>('theme', 'dark');
 
   useEffect(() => {
     const root = window.document.documentElement;
