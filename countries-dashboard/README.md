@@ -1,4 +1,5 @@
 # Countries Dashboard
+
 ## Candidate Information
 
 - **Name:** Angelo Saul Zurita Guerrero
@@ -9,11 +10,11 @@
 
 ## Project Links
 
-| Link Type | URL |
-|-----------|-----|
-| GitHub Repository | https://github.com/aszurita/Internship-Test-01-JELOU |
-| Loom Video | https://www.loom.com/share/bb151aeae9944f67be57d1da6218ddcf|
-| Live Demo  | https://countriesdashboard.vercel.app/ |
+| Link Type         | URL                                                         |
+| ----------------- | ----------------------------------------------------------- |
+| GitHub Repository | https://github.com/aszurita/Internship-Test-01-JELOU        |
+| Loom Video        | https://www.loom.com/share/bb151aeae9944f67be57d1da6218ddcf |
+| Live Demo         | https://countriesdashboard.vercel.app/                      |
 
 ---
 
@@ -21,7 +22,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/aszurita/Internship-Test-01-JELOU 
+git clone https://github.com/aszurita/Internship-Test-01-JELOU
 cd Internship-Test-01-JELOU
 cd countries-dashboard
 
@@ -32,7 +33,7 @@ npm install
 npm run dev
 
 # Open in browser
-http://localhost:5173 (Vite) 
+http://localhost:5173 (Vite)
 ```
 
 ---
@@ -50,74 +51,97 @@ http://localhost:5173 (Vite)
 
 ### Core Features
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Country List Display | ✅ / ⏳ / ❌ | ✅ |
-| Search Functionality | ✅ / ⏳ / ❌ | ✅ |
-| Region Filter | ✅ / ⏳ / ❌ | ✅ |
-| Country Detail View | ✅ / ⏳ / ❌ | ✅ |
-| Loading States | ✅ / ⏳ / ❌ | ✅ |
-| Error Handling | ✅ / ⏳ / ❌ | ✅ |
+| Feature              | Status       | Notes |
+| -------------------- | ------------ | ----- |
+| Country List Display | ✅ / ⏳ / ❌ | ✅    |
+| Search Functionality | ✅ / ⏳ / ❌ | ✅    |
+| Region Filter        | ✅ / ⏳ / ❌ | ✅    |
+| Country Detail View  | ✅ / ⏳ / ❌ | ✅    |
+| Loading States       | ✅ / ⏳ / ❌ | ✅    |
+| Error Handling       | ✅ / ⏳ / ❌ | ✅    |
 
 ### Bonus Features
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Responsive Design | ✅ / ❌ | ✅|
-| Dark/Light Mode | ✅ / ❌ | ✅ | 
-| Sort Functionality | ✅ / ❌ | ✅|
-| Favorites (localStorage) | ✅ / ❌ | ✅ |
-| TypeScript | ✅ / ❌ | ✅ |
-| Unit Tests | ✅ / ❌ | ✅ |
-| Live Deployment | ✅ / ❌ | ✅ |
+| Feature                  | Status  | Notes |
+| ------------------------ | ------- | ----- |
+| Responsive Design        | ✅ / ❌ | ✅    |
+| Dark/Light Mode          | ✅ / ❌ | ✅    |
+| Sort Functionality       | ✅ / ❌ | ✅    |
+| Favorites (localStorage) | ✅ / ❌ | ✅    |
+| TypeScript               | ✅ / ❌ | ✅    |
+| Unit Tests               | ✅ / ❌ | ✅    |
+| Live Deployment          | ✅ / ❌ | ✅    |
 
 ---
 
 ## Screenshots
 
 ### Home Page / Country List
+
 ![Country List](./screenshots/country-list.png)
+
 > Main dashboard displaying country cards in a grid layout with flags, names, capitals, population, and region info. Each card includes a favorite star icon.
 
 ### Search in Action
+
 ![Search](./screenshots/search.png)
+
 > Real-time search filtering countries by name. Searching "Ecuador" instantly displays only the matching country card.
 
 ### Country Detail View
+
 ![Detail View](./screenshots/detail.png)
+
 > Detailed view of a selected country (Ecuador) showing its flag, native name, population, region, sub-region, capital, top-level domain, currencies, languages, and border countries.
 
 ### Loading
+
 ![Loading](./screenshots/loading.png)
+
 > Loading state with a spinning indicator displayed while fetching data from the REST Countries API.
 
 ### Error States
+
 ![Loading](./screenshots/errorStates.png)
+
 > User-friendly error message ("Service Temporarily Unavailable") shown when the API fails, with a Retry button to attempt reconnection.
 
 ### Unit Test
+
 ![Loading](./screenshots/unitTest.png)
+
 > Terminal output showing all 31 unit tests passing across 6 test files using Vitest and React Testing Library.
 
-###  Region Filter
+### Region Filter
+
 ![Loading](./screenshots/regionFilter.png)
+
 > Dropdown filter selecting "Americas" region, displaying only countries from that continent.
 
-###  Sort
+### Sort
+
 #### By Name
+
 ![Loading](./screenshots/sortByName.png)
+
 > Countries sorted alphabetically by name in ascending order (Afghanistan, Aland Islands, Albania, Algeria...).
 
 #### By Population
+
 ![Loading](./screenshots/sortByPopulation.png)
+
 > Countries sorted by population in descending order (India, China, United States, Indonesia...).
 
-###  Favorites
+### Favorites
+
 ![Loading](./screenshots/favorites.png)
+
 > Favorites feature toggled on, showing only countries marked as favorites (Argentina, Ecuador, United States) persisted via localStorage.
 
-###  DarkMode - LightMode
+### DarkMode - LightMode
+
 ![Loading](./screenshots/darkmode.png)
+
 > Light mode theme with a clean white background and a toggle button to switch between dark and light modes.
 
 ---
@@ -166,11 +190,13 @@ src/
 ## Challenges Faced
 
 ### Challenge 1: Sharing State Across Components Without Prop Drilling
+
 **Problem:** Features like dark/light mode and favorites needed to be accessible across many components. Passing these values down through props at every level would lead to repetitive, hard-to-maintain code and excessive prop drilling.
 
 **Solution:** I opted for React Context API by creating `ThemeContext` and `FavoritesContext`. This allowed any component in the tree to access and update the theme or favorites state directly, keeping the code clean and avoiding unnecessary prop chains.
 
 ### Challenge 2: Implementing Unit Tests for Components
+
 **Problem:** I had limited prior experience with component testing. Figuring out how to properly test each component simulating user interactions, mocking API responses, and validating rendered output was a significant learning curve.
 
 **Solution:** I researched documentation for Vitest and React Testing Library, exploring best practices and examples. Through investigation and experimentation, I was able to write 31 tests across 6 test files, covering the majority of possible cases for each component and validating their expected behavior.
@@ -198,11 +224,11 @@ src/
 
 On a scale of 1-5, how would you rate your submission in each area?
 
-| Area | Rating (1-5) | Comments |
-|------|--------------|----------|
-| Functionality | 5 | All features are fully implemented with clear, validated functions covering both core and bonus requirements. |
-| Code Quality | 4 | I followed good programming practices throughout the project. There may be opportunities to refactor and optimize further, but the codebase is clean and well-structured. |
-| UI/UX | 5 | Interactive and easy-to-use dashboard with a thoughtful design  meaningful colors for each action, intuitive navigation, and a responsive layout. |
-| Documentation | 4 | I don't have much prior experience with documentation, but I tried to complete each section with detail. There may be specific details I missed, which I can improve over time as I gain more experience writing documentation. |
+| Area          | Rating (1-5) | Comments                                                                                                                                                                                                                        |
+| ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Functionality | 5            | All features are fully implemented with clear, validated functions covering both core and bonus requirements.                                                                                                                   |
+| Code Quality  | 4            | I followed good programming practices throughout the project. There may be opportunities to refactor and optimize further, but the codebase is clean and well-structured.                                                       |
+| UI/UX         | 5            | Interactive and easy-to-use dashboard with a thoughtful design meaningful colors for each action, intuitive navigation, and a responsive layout.                                                                                |
+| Documentation | 4            | I don't have much prior experience with documentation, but I tried to complete each section with detail. There may be specific details I missed, which I can improve over time as I gain more experience writing documentation. |
 
 ---
