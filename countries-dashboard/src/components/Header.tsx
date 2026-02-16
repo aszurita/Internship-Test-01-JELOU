@@ -14,7 +14,6 @@ export const Header = () => {
               Where in the world?
             </h1>
           </div>
-
           <button
             onClick={toggleTheme}
             className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-hover transition-colors"
