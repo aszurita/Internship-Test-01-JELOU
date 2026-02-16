@@ -13,7 +13,7 @@
 |-----------|-----|
 | GitHub Repository | https://github.com/aszurita/Internship-Test-01-JELOU |
 | Loom Video | https://www.loom.com/share/bb151aeae9944f67be57d1da6218ddcf|
-| Live Demo  | https://countries-dashboard-one.vercel.app/ |
+| Live Demo  | https://countriesdashboard.vercel.app/ |
 
 ---
 
