@@ -1,5 +1,7 @@
 import { useState, useMemo, useCallback } from 'react';
+import { Star } from 'lucide-react';
 import { useCountries } from '../hooks/useCountries';
+import { useFavorites } from '../context/FavoritesContext';
 import { Region, SortOption, SortDirection } from '../hooks/types';
 import { CountryCard } from './CountryCard';
 import { CountryDetail } from './CountryDetail';
@@ -9,17 +11,20 @@ import { SortControls } from './sorts/SortControls';
 
 export const CountryList = () => {
   const { countries, loading, error, retry, fetchFullCountryDetails } = useCountries();
+  const { favorites } = useFavorites();
   const [search, setSearch] = useState('');
   const [region, setRegion] = useState<Region>('All Regions');
   const [selectedCca3, setSelectedCca3] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>('name');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+  const [showFavorites, setShowFavorites] = useState(false);
 
   const filteredCountries = useMemo(() => {
     const filtered = countries.filter((c) => {
       const matchesSearch = c.name.common.toLowerCase().includes(search.toLowerCase());
       const matchesRegion = region === 'All Regions' || c.region === region;
-      return matchesSearch && matchesRegion;
+      const matchesFavorites = !showFavorites || favorites.includes(c.cca3);
+      return matchesSearch && matchesRegion && matchesFavorites;
     });
 
     return [...filtered].sort((a, b) => {
@@ -31,7 +36,7 @@ export const CountryList = () => {
       }
       return sortDirection === 'asc' ? comparison : -comparison;
     });
-  }, [countries, search, region, sortBy, sortDirection]);
+  }, [countries, search, region, sortBy, sortDirection, showFavorites, favorites]);
 
   const handleCardClick = useCallback((cca3: string) => {
     setSelectedCca3(cca3);
@@ -88,6 +93,17 @@ export const CountryList = () => {
             onDirectionChange={setSortDirection}
           />
           <RegionFilter region={region} onRegionChange={setRegion} />
+          <button
+            onClick={() => setShowFavorites(!showFavorites)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+              showFavorites
+                ? 'bg-yellow-500 text-white shadow-md'
+                : 'bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+            }`}
+          >
+            <Star size={18} className={showFavorites ? 'fill-white' : ''} />
+            Show Favorites
+          </button>
         </div>
       </div>
 
