@@ -35,4 +35,5 @@ export interface Country {
 
 export type Theme = 'light' | 'dark';
 export type Region = 'All Regions' | 'Africa' | 'Americas' | 'Asia' | 'Europe' | 'Oceania';
-export type SortOption = 'name' | 'population' | 'area';
+export type SortOption = 'name' | 'population';
+export type SortDirection = 'asc' | 'desc';
