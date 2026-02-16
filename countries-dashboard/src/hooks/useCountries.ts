@@ -18,7 +18,7 @@ const CARD_FIELDS = [
   'cca3',
 ].join(',');
 
-const LIST_ENDPOINT = `https://restcountries.com/v3.1/all?fields=${CARD_FIELDS}`;
+const LIST_ENDPOINT = `https://restcountries.com/v3.1/all?fiels=${CARD_FIELDS}`;
 
 export const useCountries = (): UseCountriesReturn => {
   const [countries, setCountries] = useState<Country[]>([]);
