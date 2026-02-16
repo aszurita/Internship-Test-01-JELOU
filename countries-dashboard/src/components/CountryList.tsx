@@ -89,9 +89,9 @@ export const CountryList = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
+      <div className="flex flex-col gap-4 mb-10">
         <SearchFilter search={search} onSearchChange={setSearch} />
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           <SortControls
             sortBy={sortBy}
             sortDirection={sortDirection}
