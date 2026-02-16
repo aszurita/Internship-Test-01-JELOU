@@ -5,10 +5,10 @@ import { ThemeProvider } from './context/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-dark-bg">
+      <main className="min-h-screen bg-gray-50 dark:bg-dark-bg">
         <Header />
         <CountryList />
-      </div>
+      </main>
     </ThemeProvider>
   )
 }

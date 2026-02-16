@@ -12,7 +12,7 @@ export const RegionFilter = ({ region, onRegionChange }: RegionFilterProps) => {
     <select
       value={region}
       onChange={(e) => onRegionChange(e.target.value as Region)}
-      className="px-4 py-3 rounded-lg bg-white dark:bg-dark-card text-gray-900 dark:text-white shadow-md outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer appearance-none min-w-[180px]"
+      className="px-4 py-3 rounded-lg bg-white dark:bg-dark-card text-gray-900 dark:text-white shadow-md outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer appearance-none min-w-45"
     >
       {REGIONS.map((r) => (
         <option key={r} value={r}>

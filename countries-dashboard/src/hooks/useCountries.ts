@@ -45,7 +45,6 @@ export const useCountries = (): UseCountriesReturn => {
       }
       
       const data: Country[] = await response.json();
-      //console.log('Countries data:', data);
 
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error('No countries data received');
