@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dark-bg: #1F2C37;
+  --color-dark-card: #2A3945;
+  --color-dark-hover: #374b5c;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+  @apply dark:bg-dark-bg dark:text-white;
+}
